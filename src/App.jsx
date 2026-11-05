@@ -1,31 +1,24 @@
+
+import { Route, Routes } from 'react-router'
+import Home from './pages/home.jsx'
+import Login from './pages/login.jsx'
+import Page404 from './pages/Page404.jsx'
+import VagaDetalhe from './pages/VagaDetalhe.jsx'
 import './App.css'
 
 function App() {
   
+
   return (
-    <div>
- <header>
-        <h1>OpenBoard</h1>
-        <div>
-            <a href="">Entrar</a>
-            <button className="btn">Publicar Vaga - $299</button>
-        </div>
-    </header>
+  <Routes>
+    <Route index element={<Login />} />
+    <Route path="/home" element={<Home />} />
+    <Route path="/vaga/:id" element={<VagaDetalhe />} />
+    <Route path="*" element={<Page404 />} />
     
-
-<footer>
-        <p>OpenBoard 2026 todos os direitos reservados</p>
-
-        <nav>
-            <a href="">Entrar</a>
-            <a href="">Publicar Vaga</a>
-            <a href="">Sobre</a>
-            <a href="">Privacidade</a>
-        </nav>
-
-    </footer>
-    </div>
+  </Routes>
   )
 }
 
 export default App
+ 
